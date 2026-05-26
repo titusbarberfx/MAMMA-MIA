@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mamma Mia | Pizzeria Artigianale · Cartagena</title>
+<meta name="description" content="Pizzería artesanal en Cartagena. Pizzas, tacos, panozzos, hamburguesas, empanadas y postres. ¡Haz tu pedido al 643 542 157!"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-primary-fixed":"#410001","on-secondary-container":"#66645e","primary-container":"#8b261d","secondary-fixed":"#e6e2d9","on-tertiary-fixed-variant":"#474746","surface-container-high":"#ebe8df","surface-container-highest":"#e5e2da","on-tertiary-fixed":"#1c1b1b","on-primary-container":"#ffa396","tertiary-fixed-dim":"#c8c6c5","on-error":"#ffffff","outline":"#8b716e","on-secondary-fixed":"#1c1c17","on-tertiary":"#ffffff","surface-dim":"#dddad1","surface-container-low":"#f6f3ea","on-error-container":"#93000a","on-primary":"#ffffff","primary-fixed":"#ffdad5","on-surface":"#1c1c17","error":"#ba1a1a","surface-tint":"#a6392e","surface-container":"#f1eee5","secondary-fixed-dim":"#c9c6be","on-secondary-fixed-variant":"#484741","tertiary-container":"#4b4a4a","surface":"#fcf9f0","secondary":"#605e58","on-tertiary-container":"#bcbab9","tertiary-fixed":"#e5e2e1","background":"#fcf9f0","secondary-container":"#e6e2d9","error-container":"#ffdad6","on-secondary":"#ffffff","primary-fixed-dim":"#ffb4a9","outline-variant":"#dec0bb","inverse-on-surface":"#f4f1e8","on-primary-fixed-variant":"#85221a","surface-variant":"#e5e2da","on-background":"#1c1c17","inverse-primary":"#ffb4a9","surface-bright":"#fcf9f0","surface-container-lowest":"#ffffff","inverse-surface":"#31312b","tertiary":"#343434","primary":"#6b0d09","on-surface-variant":"#57423f",
+        "italia-verde":"#008C45","italia-rosso":"#CD212A","oro":"#B89150"
+      },
+      "borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+      "spacing":{"lg":"48px","xl":"80px","xs":"4px","md":"24px","container-max":"1280px","sm":"12px","base":"8px","gutter":"24px"},
+      "fontFamily":{"label-md":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"title-lg":["Hanken Grotesk"],"display-lg":["EB Garamond"],"headline-lg":["EB Garamond"],"display-lg-mobile":["EB Garamond"],"headline-md":["EB Garamond"],"body-lg":["Hanken Grotesk"]},
+      "fontSize":{
+        "label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.1em","fontWeight":"500"}],
+        "body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],
+        "title-lg":["20px",{"lineHeight":"28px","letterSpacing":"0.05em","fontWeight":"600"}],
+        "display-lg":["64px",{"lineHeight":"72px","letterSpacing":"-0.02em","fontWeight":"500"}],
+        "headline-lg":["48px",{"lineHeight":"56px","fontWeight":"400"}],
+        "display-lg-mobile":["40px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"500"}],
+        "headline-md":["32px",{"lineHeight":"40px","fontWeight":"400"}],
+        "body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24}
+body{background-color:#fcf9f0;color:#1c1c17;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.grain-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;opacity:.03;background-image:url(https://lh3.googleusercontent.com/aida-public/AB6AXuCcULs79GGyhb03-j0gdYziVT_sfoGBG-A4h8ZfoONRFmx-EunfmTtcWh6l9fXzmESU1d3ksEvd4XpUrV4NUbDthahVkq2Fth0lPQoMKUspr3_lKAKjfHPPkDkNYJHaoqApEWTtZx9RbNybxOsSgrBEDo8PMYVfa_-6uxF8Hg9aAfYGecQ6Tlm3Gc1nJ0VyuDwjMdf9HHhHcpl5Kp998JpJuqH61TX6iLNrnLDoICKFPMDEYockKSto2DHcKpWIzFPuHFttTOMxgF0)}
+.section-padding{padding-top:120px;padding-bottom:120px}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#fcf9f0}
+::-webkit-scrollbar-thumb{background:#6b0d09}
+
+.tricolor-strip{height:3px;background:linear-gradient(to right,#008C45 0%,#008C45 33.33%,#ffffff 33.33%,#ffffff 66.66%,#CD212A 66.66%,#CD212A 100%);width:100%;position:relative;z-index:60}
+.tricolor-line{display:inline-block;width:80px;height:2px;background:linear-gradient(to right,#008C45 0%,#008C45 33.33%,#f4f1e8 33.33%,#f4f1e8 66.66%,#CD212A 66.66%,#CD212A 100%)}
+.tricolor-dot{display:inline-flex;gap:3px}
+.tricolor-dot span{width:6px;height:6px;border-radius:50%}
+.tricolor-dot span:nth-child(1){background:#008C45}
+.tricolor-dot span:nth-child(2){background:#ffffff;border:1px solid rgba(0,0,0,.08)}
+.tricolor-dot span:nth-child(3){background:#CD212A}
+
+.promo-banner{background:#6b0d09;color:#fff;font-family:'Hanken Grotesk',sans-serif;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;text-align:center;padding:9px 16px;position:relative;z-index:55;overflow:hidden}
+.promo-banner .promo-track{display:inline-flex;gap:48px;animation:promo-scroll 22s linear infinite}
+.promo-banner .promo-track span{display:flex;align-items:center;gap:10px;white-space:nowrap}
+@keyframes promo-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.promo-banner a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+.tilt-card{transition:transform .35s ease;transform-style:preserve-3d;will-change:transform;position:relative}
+.tilt-shine{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.15),transparent 60%);opacity:0;transition:opacity .35s ease;pointer-events:none;z-index:2}
+.tilt-card:hover .tilt-shine{opacity:1}
+
+.hero-image-container{perspective:1500px}
+.hero-img-3d{transition:transform .12s ease-out;will-change:transform}
+.hero-pizza-svg{position:absolute;opacity:.06;pointer-events:none}
+
+.parallax-wrap{clip-path:inset(0 15% 0 15%)}
+
+.menu-subnav{position:sticky;top:88px;z-index:40;background:rgba(252,249,240,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(139,113,110,.15)}
+.subnav-link{position:relative;display:inline-block;padding:14px 16px;font-size:11.5px;letter-spacing:.14em;font-weight:600;text-transform:uppercase;color:#57423f;transition:color .25s;white-space:nowrap;font-family:'Hanken Grotesk',sans-serif;text-decoration:none}
+.subnav-link::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:#6b0d09;transition:width .3s ease}
+.subnav-link.active,.subnav-link:hover{color:#6b0d09}
+.subnav-link.active::after,.subnav-link:hover::after{width:65%}
+.subnav-scroll{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.subnav-scroll::-webkit-scrollbar{display:none}
+
+.menu-item{transition:transform .2s ease,background .2s ease;padding:11px 0;cursor:default}
+.menu-item:hover{transform:perspective(600px) rotateX(-1.5deg) translateZ(4px);background:rgba(107,13,9,.02)}
+.item-price{transition:transform .2s ease;display:inline-block;font-variant-numeric:tabular-nums}
+.menu-item:hover .item-price{transform:scale(1.08)}
+.menu-num{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:#6b0d09;color:#fff;font-size:9.5px;font-weight:700;flex-shrink:0;margin-top:3px;font-family:'Hanken Grotesk',sans-serif;line-height:1}
+.gourmet-tag{display:inline-block;background:linear-gradient(135deg,#6b0d09,#a6392e);color:#fff;font-size:8.5px;letter-spacing:.18em;padding:2px 8px;text-transform:uppercase;font-weight:700;font-family:'Hanken Grotesk',sans-serif;vertical-align:middle}
+
+.menu-note{display:inline-flex;align-items:center;gap:10px;border-left:2px solid #6b0d09;background:rgba(107,13,9,.04);padding:9px 16px;font-size:12.5px;color:#57423f;font-family:'Hanken Grotesk',sans-serif;margin-bottom:28px;flex-wrap:wrap}
+.menu-note strong{color:#6b0d09;font-weight:700;font-size:14px}
+
+.float-call{position:fixed;bottom:24px;right:24px;z-index:100;background:#6b0d09;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(107,13,9,.45);transition:transform .3s ease,box-shadow .3s ease;animation:pulse-call 2.5s ease-in-out infinite;text-decoration:none}
+.float-call:hover{transform:scale(1.1);box-shadow:0 14px 44px rgba(107,13,9,.6)}
+@keyframes pulse-call{0%,100%{box-shadow:0 8px 28px rgba(107,13,9,.45),0 0 0 0 rgba(107,13,9,.3)}60%{box-shadow:0 8px 28px rgba(107,13,9,.45),0 0 0 16px rgba(107,13,9,0)}}
+
+.cat-header{transform-origin:left center;will-change:transform,opacity}
+.cat-divider{height:1px;background:linear-gradient(to right,transparent,rgba(139,113,110,.3),transparent);margin:52px 0 60px}
+
+.scroll-main{scroll-margin-top:120px}
+.scroll-sub{scroll-margin-top:160px}
+
+.bg-alt{background-color:#f6f3ea}
+.bg-dark{background-color:#1c1c17;color:#fcf9f0}
+.bg-dark .text-primary{color:#ffb4a9}
+
+.cta-phone{display:inline-flex;align-items:center;gap:16px;background:#6b0d09;color:#fff;padding:20px 48px;font-family:'Hanken Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:.02em;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none}
+.cta-phone:hover{transform:scale(1.03) translateY(-2px);box-shadow:0 20px 60px rgba(107,13,9,.35)}
+@media(max-width:600px){.cta-phone{font-size:20px;padding:16px 28px}}
+
+.bento-grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr);grid-auto-rows:200px}
+.bento-cell{position:relative;overflow:hidden;background:#1c1c17;cursor:pointer;transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.bento-cell:hover{transform:perspective(1200px) rotateY(-2deg) rotateX(2deg) scale(1.02);z-index:10}
+.bento-cell img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(.85)}
+.bento-cell:hover img{transform:scale(1.08);filter:saturate(1.1)}
+.bento-cell .bento-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.4) 40%,transparent 70%);z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff}
+.bento-cell .bento-tag{font-family:'Hanken Grotesk',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ffb4a9;margin-bottom:8px;font-weight:600}
+.bento-cell .bento-title{font-family:'EB Garamond',serif;font-style:italic;font-size:24px;line-height:1.1;margin-bottom:6px}
+.bento-cell .bento-desc{font-family:'Hanken Grotesk',sans-serif;font-size:13px;opacity:.85;line-height:1.4}
+.bento-cell .bento-price{position:absolute;top:20px;right:20px;background:#6b0d09;color:#fff;padding:6px 12px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:700;z-index:3;letter-spacing:.02em}
+.bento-a{grid-column:span 7;grid-row:span 2}
+.bento-b{grid-column:span 5;grid-row:span 1}
+.bento-c{grid-column:span 5;grid-row:span 1}
+.bento-d{grid-column:span 4;grid-row:span 1}
+.bento-e{grid-column:span 4;grid-row:span 1}
+.bento-f{grid-column:span 4;grid-row:span 1}
+@media(max-width:768px){
+  .bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .bento-a{grid-column:span 2;grid-row:span 2}
+  .bento-b,.bento-c,.bento-d,.bento-e,.bento-f{grid-column:span 1;grid-row:span 1}
+}
+
+.stat-block{text-align:center}
+.stat-number{font-family:'EB Garamond',serif;font-size:72px;line-height:1;color:#6b0d09;font-weight:500;font-variant-numeric:tabular-nums}
+.stat-label{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#57423f;margin-top:12px}
+@media(max-width:768px){.stat-number{font-size:48px}}
+
+.testimonial-card{background:#fcf9f0;padding:36px 32px;border:1px solid rgba(139,113,110,.18);position:relative;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
+.testimonial-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(107,13,9,.08)}
+.testimonial-card .quote-mark{position:absolute;top:-12px;left:24px;font-family:'EB Garamond',serif;font-size:80px;line-height:1;color:#6b0d09;font-style:italic}
+.testimonial-stars{display:flex;gap:3px;margin-bottom:16px}
+.testimonial-stars svg{width:16px;height:16px;fill:#B89150}
+.testimonial-quote{font-family:'EB Garamond',serif;font-style:italic;font-size:18px;line-height:1.55;color:#1c1c17;margin-bottom:20px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#6b0d09,#a6392e);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px}
+.testimonial-name{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;color:#1c1c17}
+.testimonial-meta{font-family:'Hanken Grotesk',sans-serif;font-size:11.5px;color:#57423f;letter-spacing:.05em}
+
+.hours-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed rgba(139,113,110,.25)}
+.hours-row:last-child{border-bottom:none}
+.hours-row.today{background:rgba(107,13,9,.04);padding-left:14px;padding-right:14px;margin:0 -14px}
+.hours-day{font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.06em;font-weight:500;color:#1c1c17;text-transform:uppercase}
+.hours-time{font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:#57423f;font-variant-numeric:tabular-nums}
+.hours-row.today .hours-day,.hours-row.today .hours-time{color:#6b0d09;font-weight:700}
+.hours-open-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(0,140,69,.12);border:1px solid rgba(0,140,69,.3);color:#008C45;font-family:'Hanken Grotesk',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.hours-open-pill .pulse-dot{width:8px;height:8px;background:#008C45;border-radius:50%;animation:pulse-dot 1.6s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+.ornament-divider{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;color:#B89150;max-width:240px}
+.ornament-divider .line{flex:1;height:1px;background:linear-gradient(to right,transparent,#B89150)}
+.ornament-divider .line.r{background:linear-gradient(to left,transparent,#B89150)}
+
+.featured-section{position:relative;overflow:hidden}
+.featured-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(to right,#008C45,#fcf9f0,#CD212A)}
+</style>
+</head>
+<body class="font-body-md text-body-md">
+<div class="grain-overlay"></div>
+
+<div class="tricolor-strip" id="tricolor-top"></div>
+<div class="promo-banner">
+  <div class="promo-track">
+    <span><span class="material-symbols-outlined" style="font-size:14px">local_pizza</span> Pizzas artesanales desde 7,50€</span>
+    <span><span class="material-symbols-outlined" style="font-size:14px">call</span> Pedidos al <a href="tel:643542157">643 542 157</a></span>
+    <span><span class="material-symbols-outlined" style="font-size:14px">storefront</span> C/ del San Juan, 4 · Cartagena</span>
+    <span><span class="material-symbols-outlined" style="font-size:14px">local_pizza</span> Pizzas artesanales desde 7,50€</span>
+    <span><span class="material-symbols-outlined" style="font-size:14px">call</span> Pedidos al <a href="tel:643542157">643 542 157</a></span>
+    <span><span class="material-symbols-outlined" style="font-size:14px">storefront</span> C/ del San Juan, 4 · Cartagena</span>
+  </div>
+</div>
+
+<a href="tel:643542157" class="float-call" aria-label="Llamar · 643 542 157" title="Haz tu pedido ahora">
+  <span class="material-symbols-outlined" style="font-size:26px">call</span>
+</a>
+
+<nav class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline/10" id="main-nav">
+  <div class="max-w-container-max mx-auto flex justify-between items-center px-gutter py-sm">
+    <div class="flex items-center gap-xl">
+      <a class="flex items-center gap-sm font-display-lg-mobile text-display-lg-mobile text-primary italic font-medium" href="#hero">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 21L12 3L21 21H3Z" stroke="#6b0d09" stroke-width="1.6" stroke-linejoin="round" fill="#ffe9c8"/>
+          <circle cx="9" cy="15" r="1.2" fill="#6b0d09"/>
+          <circle cx="14" cy="13" r="1" fill="#008C45"/>
+          <circle cx="12" cy="17" r="1" fill="#6b0d09"/>
+          <circle cx="15.5" cy="17" r=".8" fill="#008C45"/>
+        </svg>
+        Mamma Mia
+      </a>
+      <div class="hidden md:flex gap-lg">
+        <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#carta">La Carta</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#favoritos">Favoritos</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#historia">Historia</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <a href="tel:643542157" class="hidden sm:flex items-center gap-sm bg-primary text-on-primary px-lg py-sm font-label-md text-label-md uppercase tracking-widest hover:opacity-80 transition-all duration-300 active:scale-95">
+      <span class="material-symbols-outlined" style="font-size:15px">call</span>
+      643 542 157
+    </a>
+    <a href="tel:643542157" class="sm:hidden bg-primary text-on-primary p-sm active:scale-95">
+      <span class="material-symbols-outlined" style="font-size:20px">call</span>
+    </a>
+  </div>
+</nav>
+
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center" id="hero">
+  <div class="absolute inset-0 z-0 hero-image-container">
+    <img alt="Mamma Mia Pizzeria Cartagena" class="hero-img-3d w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiScluvMHTE-hR_X9UxJO-pzuT6QTvdXIVvbumPiLAVdjUNXAwMQjTK49Pu7rbgsecFkRykF6l5zJVsA1rUMGCZuRVGDEl42O48dTxyhE2qjLpKcNNz7jCKUpcXuLHRdS3Xgs2PNPq4NfccEwVjcKXDq_753Jw9FygHpumnz6OKUpXJXmvkT6WR9X-Et5UGr_Vdk3Nq90ZJBGQJQi9y_YJ99iDGQtxmRHoH0DGfmqiE0wprvEHilt1UYLE"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70"></div>
+  </div>
+  <svg class="hero-pizza-svg" style="top:8%;left:5%;width:140px;height:140px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="#fff" stroke-width="1.2" fill="none">
+      <line x1="50" y1="10" x2="50" y2="90"/>
+      <ellipse cx="44" cy="22" rx="4" ry="7" transform="rotate(-25 44 22)"/>
+      <ellipse cx="56" cy="22" rx="4" ry="7" transform="rotate(25 56 22)"/>
+      <ellipse cx="42" cy="36" rx="4" ry="7" transform="rotate(-25 42 36)"/>
+      <ellipse cx="58" cy="36" rx="4" ry="7" transform="rotate(25 58 36)"/>
+      <ellipse cx="40" cy="50" rx="4" ry="7" transform="rotate(-25 40 50)"/>
+      <ellipse cx="60" cy="50" rx="4" ry="7" transform="rotate(25 60 50)"/>
+      <ellipse cx="42" cy="64" rx="4" ry="7" transform="rotate(-25 42 64)"/>
+      <ellipse cx="58" cy="64" rx="4" ry="7" transform="rotate(25 58 64)"/>
+    </g>
+  </svg>
+  <svg class="hero-pizza-svg" style="bottom:12%;right:6%;width:120px;height:120px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="50" cy="58" r="32" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <path d="M50 26 L46 18 L42 24 L50 26 L58 24 L54 18 Z" stroke="#fff" stroke-width="1.5" fill="none"/>
+    <path d="M50 26 L50 32" stroke="#fff" stroke-width="1.5"/>
+  </svg>
+  <div class="relative z-10 text-center px-gutter" id="hero-text">
+    <div class="flex justify-center mb-md">
+      <span class="tricolor-line" style="background:linear-gradient(to right,#008C45 0%,#008C45 33%,#ffffff 33%,#ffffff 66%,#CD212A 66%,#CD212A 100%);width:88px;height:3px"></span>
+    </div>
+    <span class="font-label-md text-label-md text-white/65 uppercase tracking-[0.3em] mb-md block">C/ del San Juan, 4 · 30201 Cartagena, Murcia</span>
+    <h1 class="font-display-lg text-display-lg text-white mb-lg max-w-4xl italic mx-auto" style="line-height:1.1">L'Arte della<br/>Vera Pizza</h1>
+    <p class="font-body-lg text-body-lg text-white/75 max-w-xl mx-auto mb-xl italic">Pizzas artesanales, tacos, panozzos y mucho más. Hechos a mano, con horno tradicional.</p>
+    <a href="tel:643542157" class="inline-flex items-center gap-sm border border-white/40 bg-white/10 backdrop-blur-sm text-white px-xl py-md font-label-md text-label-md uppercase tracking-widest hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95">
+      <span class="material-symbols-outlined" style="font-size:18px">call</span>
+      643 542 157 &nbsp;·&nbsp; ¡Haz tu pedido ahora!
+    </a>
+  </div>
+  <div class="absolute bottom-xl left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <span class="material-symbols-outlined text-white" style="font-size:36px">keyboard_double_arrow_down</span>
+  </div>
+</section>
+
+<section class="section-padding bg-surface scroll-main" id="historia">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
+    <div class="md:col-span-6 md:col-start-2" id="historia-text">
+      <div class="flex items-center gap-sm mb-md">
+        <span class="tricolor-dot"><span></span><span></span><span></span></span>
+        <span class="font-label-md text-label-md text-outline uppercase tracking-widest">Tradizione Italiana</span>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-lg">Fatto a Mano con Amore</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-md leading-relaxed">
+        Nuestra filosofía es simple: ingredientes frescos, masa de fermentación lenta y el calor directo del horno. Cada pizza, taco o empanada sale de nuestras manos con el mismo cariño.
+      </p>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-lg leading-relaxed opacity-75">
+        En Mamma Mia encontrarás pizzas artesanales, tacos mexicanos, panozzos y mucho más. Para comer aquí o llevarte a casa. Llámanos y lo preparamos.
+      </p>
+      <div class="flex gap-md items-center">
+        <span class="h-px w-12 bg-outline"></span>
+        <span class="font-label-md text-label-md text-outline uppercase tracking-widest">Cartagena, Murcia</span>
+      </div>
+    </div>
+    <div class="md:col-span-4 md:col-start-8">
+      <div class="tilt-card aspect-[4/5] overflow-hidden">
+        <div class="tilt-shine"></div>
+        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlIVpQtOeNV13KgSlLnQKSCp9f6xzc-Vl0IgoRoph3dVZsvPXtb_tGhI63WY2C3tyyBEt50ZaNEhUiB7MwT3yodlE0lbyu8UKhkPhw6lDWYuCce2cLcxBRvY_JxLDJuNZUUxQKDnjTShCBK7dboiBsKbwmVsCuJ483ySDKxBMk1Ibm747wQIsxmTOHcQsHftEaXbfjkS4XeEArXPtuxbTQ3srfznh10XCW48KMRjHTIbkYa-4vgmFIgDV2yEFNcfpBHLFCTgTtZWY" alt="Cocina artesanal"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt py-xl">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
+      <div class="stat-block"><div class="stat-number" data-count="24">0</div><div class="stat-label">Variedades de Pizza</div></div>
+      <div class="stat-block"><div class="stat-number" data-count="100" data-suffix="%">0</div><div class="stat-label">Artesanal</div></div>
+      <div class="stat-block"><div class="stat-number" data-count="40">0</div><div class="stat-label">Sabores en Carta</div></div>
+      <div class="stat-block"><div class="stat-number" data-count="5" data-suffix="★">0</div><div class="stat-label">Valoración Media</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section section-padding bg-surface scroll-main" id="favoritos">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-xl">
+      <div class="ornament-divider mb-md">
+        <span class="line"></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21L12 3L21 21H3Z" stroke="#B89150" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="15" r="1" fill="#B89150"/><circle cx="14" cy="14" r=".8" fill="#B89150"/></svg>
+        <span class="line r"></span>
+      </div>
+      <span class="font-label-md text-label-md text-outline uppercase tracking-[0.3em]">Le Favorite della Casa</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary italic mt-sm">Las preferidas del local</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto mt-md">Una selección de nuestras especialidades más pedidas, todas con masa artesanal e ingredientes seleccionados.</p>
+    </div>
+    <div class="bento-grid">
+      <a href="#pizzas" class="bento-cell bento-a">
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&auto=format&fit=crop" alt="Pizza Trufa"/>
+        <span class="bento-price">9,50€</span>
+        <div class="bento-overlay"><span class="bento-tag">Pizza · Gourmet</span><h3 class="bento-title">Tartufata</h3><p class="bento-desc">Mozzarella, champiñones, gorgonzola, crema de trufa, rúcula y tomate cherry</p></div>
+      </a>
+      <a href="#tacos" class="bento-cell bento-b">
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=900&auto=format&fit=crop" alt="Four Cheeses"/>
+        <span class="bento-price">10,00€</span>
+        <div class="bento-overlay"><span class="bento-tag">Tacos Blue</span><h3 class="bento-title">Four Cheeses</h3><p class="bento-desc">El más cremoso</p></div>
+      </a>
+      <a href="#pizzas" class="bento-cell bento-c">
+        <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=900&auto=format&fit=crop" alt="Margherita"/>
+        <span class="bento-price">7,50€</span>
+        <div class="bento-overlay"><span class="bento-tag">Pizza · Clásica</span><h3 class="bento-title">La Tomate Mozzarella</h3><p class="bento-desc">La esencia napolitana</p></div>
+      </a>
+      <a href="#pizzas" class="bento-cell bento-d">
+        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&auto=format&fit=crop" alt="Calzone"/>
+        <span class="bento-price">9,50€</span>
+        <div class="bento-overlay"><span class="bento-tag">Gourmet</span><h3 class="bento-title">Calzone</h3><p class="bento-desc">Jamón, carne picada y huevo</p></div>
+      </a>
+      <a href="#hamburguesas" class="bento-cell bento-e">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop" alt="Hamburguesa al horno"/>
+        <span class="bento-price">7,50€</span>
+        <div class="bento-overlay"><span class="bento-tag">Menú · Hamburguesa</span><h3 class="bento-title">Al Horno</h3><p class="bento-desc">Pollo o carne · Bebida + patata</p></div>
+      </a>
+      <a href="#postres" class="bento-cell bento-f">
+        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&auto=format&fit=crop" alt="Tiramisú"/>
+        <span class="bento-price">4,00€</span>
+        <div class="bento-overlay"><span class="bento-tag">Postre</span><h3 class="bento-title">Tiramisú</h3><p class="bento-desc">Dolce della casa</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="parallax-section relative overflow-hidden" style="height:70vh">
+  <div class="parallax-wrap w-full h-full">
+    <img alt="Ingredientes frescos" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYhdz5OYwPoVnW7IsShZJGmJZ-W-gk8FRsu1HreKmsBaa1Gu4x9eDQaI8LrKMV_wnx9c0J2POelOnB25Fkwm3klx7oIVuBQqz1rg7mDGhQyNkGD5hl0nd24wt5dUepqFcGXFVe2CSyLmDtreeyyXtDAbM4pWd7bQCSZBzTfyvfXTPyTnWNyE5MePtuTrkHAJZRpMv7J7lk2VhO6EITZli80nkQkOBbO9qyWtZ9xEWB6BWkYZ0lIBA8J5MbkMqQa68xI9jytE3J3IE"/>
+  </div>
+  <div class="absolute inset-0 bg-black/25 flex flex-col items-center justify-center pointer-events-none">
+    <h3 class="font-display-lg text-display-lg text-white italic drop-shadow-2xl text-center px-gutter">Ingredienti Puri</h3>
+    <p class="font-body-md text-body-md text-white/80 mt-sm text-center px-gutter italic">Tomate, mozzarella, albahaca · la trinidad italiana</p>
+  </div>
+</section>
+
+<section class="bg-surface" id="carta">
+  <div class="pt-xl pb-md max-w-container-max mx-auto px-gutter text-center">
+    <div class="ornament-divider mb-md"><span class="line"></span><span class="tricolor-dot"><span></span><span></span><span></span></span><span class="line r"></span></div>
+    <span class="font-label-md text-label-md text-outline uppercase tracking-[0.3em]">¡Haz tu pedido ahora · 643 542 157!</span>
+    <h2 class="font-headline-lg text-headline-lg text-primary italic mt-sm mb-0">La Carta</h2>
+  </div>
+  <div class="menu-subnav" id="menu-subnav">
+    <div class="max-w-container-max mx-auto">
+      <div class="subnav-scroll flex px-gutter">
+        <a class="subnav-link active" href="#pizzas">Pizzas</a>
+        <a class="subnav-link" href="#tacos">Tacos</a>
+        <a class="subnav-link" href="#panozzo">Panozzo</a>
+        <a class="subnav-link" href="#hamburguesas">Hamburguesas</a>
+        <a class="subnav-link" href="#empanadas">Empanadas</a>
+        <a class="subnav-link" href="#postres">Postres</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding scroll-sub" id="pizzas">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl">
+        <h3 class="font-headline-md text-headline-md text-primary italic">Pizzas</h3>
+        <span class="font-label-md text-label-md text-outline uppercase tracking-widest mb-1 hidden sm:block">Clásicas · Horno tradicional</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-xl">
+        <div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">1</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">7,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">2</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, cebolla</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">7,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">3</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, peperoni</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">4</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">5</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, champiñones</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">6</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, bacon</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">7</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, carne picada</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">8</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, atún</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">9</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, sepia y gambas</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">10</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, cuatro quesos</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+        </div>
+        <div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">11</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón y huevo</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">12</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, espinaca, ajo y huevo</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">13</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón y pimientos</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">14</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón y piña</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">15</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón y champiñones</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">16</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, bacon y maíz</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">17</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, carne y bacon</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">18</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, calabacín, champiñón, berenjena</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">19</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Barbacoa, cebolla, carne</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">8,00€</span></div>
+        </div>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="cat-header flex items-center gap-md border-b border-outline/20 pb-md mb-xl">
+        <h3 class="font-headline-md text-headline-md text-primary italic">Gourmet</h3>
+        <span class="gourmet-tag">Premium</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-xl">
+        <div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">20</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, peperoni, champiñón, albahaca, gorgonzola</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">9,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">21</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, champiñones, gorgonzola, crema de trufa, rúcula y tomate cherry</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">9,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">22</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomate mozzarella, jamón serrano, parmesano, rúcula, tomate cherry y vinagre balsámico</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">9,50€</span></div>
+        </div>
+        <div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">23</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Crema de queso, pollo, albahaca y tomate cherry</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">9,50€</span></div>
+          <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">24</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors"><strong>Calzone</strong> · Jamón, carne picada, huevo, tomate mozzarella</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">9,50€</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding bg-alt scroll-sub" id="tacos">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl">
+        <h3 class="font-headline-md text-headline-md text-primary italic">Tacos</h3>
+        <span class="font-label-md text-label-md text-outline uppercase tracking-widest mb-1 hidden sm:block">Mexicanos &amp; Blue</span>
+      </div>
+      <div class="mb-xl">
+        <h4 class="font-title-lg text-title-lg text-on-surface uppercase tracking-wider mb-sm">Tacos Mexicanos</h4>
+        <div class="menu-note"><span>Menú · TACO + Bebida + Patatas</span><strong>8,00€</strong></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-xl max-w-2xl">
+          <div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">1</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, pechuga de pollo y salsas</span></div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">2</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, carne y salsas</span></div>
+          </div>
+          <div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">3</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, kebab y salsas</span></div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">4</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, nuggets y salsas</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cat-divider" style="margin:36px 0 40px"></div>
+      <div>
+        <h4 class="font-title-lg text-title-lg text-on-surface uppercase tracking-wider mb-sm">Tacos Blue</h4>
+        <div class="menu-note"><span>Menú · TACO + Bebida + Patatas</span><strong>8,00€</strong><span class="text-outline">· Gratinado al Horno</span><strong>+1,00€</strong></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-xl max-w-2xl">
+          <div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">1</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tortilla, pollo, patatas y salsas</span></div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">2</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tortilla, carne, patatas y salsas</span></div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">3</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tortilla, nuggets, patatas y salsas</span></div>
+          </div>
+          <div>
+            <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">4</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tortilla, cordón bleu, patatas y salsas</span></div>
+            <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group"><div class="flex items-start gap-sm flex-1 min-w-0"><span class="menu-num shrink-0">5</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors font-semibold">Four Cheeses</span></div><span class="item-price font-label-md text-label-md text-primary font-bold shrink-0">10,00€</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding scroll-sub" id="panozzo">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl"><h3 class="font-headline-md text-headline-md text-primary italic">Panozzo</h3><span class="font-label-md text-label-md text-outline uppercase tracking-widest mb-1 hidden sm:block">Bocadillo artesano</span></div>
+      <div class="menu-note"><span>Menú · Bebida + Patatas</span><strong>8,00€</strong></div>
+      <div class="max-w-xl">
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">1</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, pechuga de pollo y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">2</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, carne picada y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">3</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Verduras, kebab y salsas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding bg-alt scroll-sub" id="hamburguesas">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl"><h3 class="font-headline-md text-headline-md text-primary italic">Hamburguesas</h3><span class="font-label-md text-label-md text-outline uppercase tracking-widest mb-1 hidden sm:block">Al horno · Pollo o Carne</span></div>
+      <div class="max-w-xl">
+        <div class="menu-item flex items-start justify-between gap-md border-b border-outline/10 group py-md">
+          <div class="flex-1 min-w-0">
+            <p class="font-body-lg text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors mb-xs">Hamburguesa (Horno) · Pollo o Carne</p>
+            <p class="font-body-md text-body-md text-on-surface-variant italic">Preparada al horno. Elige entre pollo o carne.</p>
+            <div class="flex flex-wrap gap-md mt-sm">
+              <div><span class="font-label-md text-label-md text-outline uppercase tracking-wider text-xs">Menú · Bebida + Patata</span><span class="item-price font-label-md text-label-md text-primary font-bold ml-sm">7,50€</span></div>
+              <div><span class="font-label-md text-label-md text-outline uppercase tracking-wider text-xs">Gratinado al Horno</span><span class="font-label-md text-label-md text-primary font-bold ml-sm">+1,00€</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding scroll-sub" id="empanadas">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl"><h3 class="font-headline-md text-headline-md text-primary italic">Empanadas</h3></div>
+      <div class="menu-note"><span>Menú · Bebida + Patatas</span><strong>8,00€</strong></div>
+      <div class="max-w-2xl">
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">1</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella, queso, huevo, pechuga de pollo y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">2</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella, queso, huevo, carne picada y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">3</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella, queso, huevo, atún, aceitunas verdes y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">4</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella, queso, huevo, jamón y salsas</span></div>
+        <div class="menu-item flex items-start gap-sm border-b border-outline/10 group"><span class="menu-num shrink-0">5</span><span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella, queso, huevo, bacon y salsas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-padding bg-alt scroll-sub" id="postres">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="cat-header flex items-end gap-md border-b-2 border-primary/20 pb-md mb-xl"><h3 class="font-headline-md text-headline-md text-primary italic">Postres</h3><span class="font-label-md text-label-md text-outline uppercase tracking-widest mb-1 hidden sm:block">Dolci fatti in casa</span></div>
+      <div class="max-w-sm">
+        <div class="menu-item flex items-center justify-between gap-md border-b border-outline/10 group py-md"><span class="font-body-lg text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Creppes</span><span class="item-price font-label-md text-label-md text-primary font-bold">4,00€</span></div>
+        <div class="menu-item flex items-center justify-between gap-md border-b border-outline/10 group py-md"><span class="font-body-lg text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Tiramisú</span><span class="item-price font-label-md text-label-md text-primary font-bold">4,00€</span></div>
+        <div class="menu-item flex items-center justify-between gap-md border-b border-outline/10 group py-md"><span class="font-body-lg text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Mamma Mia Café</span><span class="item-price font-label-md text-label-md text-primary font-bold">1,50€</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-surface">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-xl">
+      <div class="ornament-divider mb-md"><span class="line"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B89150" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><span class="line r"></span></div>
+      <span class="font-label-md text-label-md text-outline uppercase tracking-[0.3em]">Lo que dicen de nosotros</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary italic mt-sm">Testimonios</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+      <div class="testimonial-card"><span class="quote-mark">"</span><div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-quote">La pizza calzone está increíble. Masa fina, ingredientes generosos. Mi sitio favorito de Cartagena para llevar.</p><div class="testimonial-author"><div class="testimonial-avatar">LR</div><div><div class="testimonial-name">Lucía Ramírez</div><div class="testimonial-meta">Reseña local · Cartagena</div></div></div></div>
+      <div class="testimonial-card"><span class="quote-mark">"</span><div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-quote">Los tacos blue Four Cheeses son brutales. Servicio rapidísimo y precio muy justo. Recomendado al 100%.</p><div class="testimonial-author"><div class="testimonial-avatar">JM</div><div><div class="testimonial-name">Javier Martín</div><div class="testimonial-meta">Cliente habitual</div></div></div></div>
+      <div class="testimonial-card"><span class="quote-mark">"</span><div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-quote">El tiramisú está hecho como el de mi nonna. Las pizzas gourmet con trufa son una delicia. Volveremos seguro.</p><div class="testimonial-author"><div class="testimonial-avatar">MS</div><div><div class="testimonial-name">Marco Salvini</div><div class="testimonial-meta">Visitante · Italia</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-alt">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-start">
+    <div>
+      <div class="flex items-center gap-md mb-md">
+        <span class="material-symbols-outlined text-primary" style="font-size:28px">schedule</span>
+        <h3 class="font-headline-md text-headline-md text-primary italic">Horarios</h3>
+        <span class="hours-open-pill ml-auto" id="open-status"><span class="pulse-dot"></span><span id="open-label">Abierto ahora</span></span>
+      </div>
+      <div id="hours-list">
+        <div class="hours-row" data-day="1"><span class="hours-day">Lunes</span><span class="hours-time">13:00 – 16:00 · 19:00 – 23:30</span></div>
+        <div class="hours-row" data-day="2"><span class="hours-day">Martes</span><span class="hours-time">13:00 – 16:00 · 19:00 – 23:30</span></div>
+        <div class="hours-row" data-day="3"><span class="hours-day">Miércoles</span><span class="hours-time">13:00 – 16:00 · 19:00 – 23:30</span></div>
+        <div class="hours-row" data-day="4"><span class="hours-day">Jueves</span><span class="hours-time">13:00 – 16:00 · 19:00 – 23:30</span></div>
+        <div class="hours-row" data-day="5"><span class="hours-day">Viernes</span><span class="hours-time">13:00 – 16:00 · 19:00 – 00:00</span></div>
+        <div class="hours-row" data-day="6"><span class="hours-day">Sábado</span><span class="hours-time">13:00 – 16:00 · 19:00 – 00:00</span></div>
+        <div class="hours-row" data-day="0"><span class="hours-day">Domingo</span><span class="hours-time">19:00 – 23:30</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-md mb-md">
+        <span class="material-symbols-outlined text-primary" style="font-size:28px">location_on</span>
+        <h3 class="font-headline-md text-headline-md text-primary italic">Dónde estamos</h3>
+      </div>
+      <div class="tilt-card aspect-[16/10] overflow-hidden mb-md">
+        <div class="tilt-shine"></div>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.9870%2C37.6005%2C-0.9805%2C37.6055&layer=mapnik&marker=37.6030%2C-0.9838" width="100%" height="100%" frameborder="0" style="border:0;filter:saturate(.92)" loading="lazy" title="Mapa Mamma Mia Cartagena"></iframe>
+      </div>
+      <div class="space-y-sm">
+        <div class="flex items-start gap-sm"><span class="material-symbols-outlined text-outline shrink-0" style="font-size:18px">place</span><p class="font-body-md text-body-md text-on-surface">C/ del San Juan, 4<br/>30201 Cartagena, Murcia</p></div>
+        <a href="tel:643542157" class="flex items-center gap-sm text-primary hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" style="font-size:18px">call</span><span class="font-body-md text-body-md font-bold">643 542 157</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=C%2F+del+San+Juan+4+Cartagena+Murcia" target="_blank" rel="noopener" class="inline-flex items-center gap-sm text-on-surface-variant hover:text-primary transition-colors mt-md"><span class="material-symbols-outlined" style="font-size:18px">directions</span><span class="font-label-md text-label-md uppercase tracking-widest">Cómo llegar</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-dark text-center scroll-main" id="contacto">
+  <div class="max-w-3xl mx-auto px-gutter">
+    <div class="flex justify-center mb-md"><span class="tricolor-line" style="background:linear-gradient(to right,#008C45 0%,#008C45 33%,#ffffff 33%,#ffffff 66%,#CD212A 66%,#CD212A 100%);width:88px;height:3px"></span></div>
+    <h2 class="font-headline-lg text-headline-lg mb-md italic" style="color:#ffb4a9">¿Listo para pedir?</h2>
+    <p class="font-body-lg text-body-lg mb-xl opacity-80">Llámanos y preparamos tu pedido al momento. Recogida en local o consulta disponibilidad de entrega.</p>
+    <div class="flex justify-center mb-xl"><a href="tel:643542157" class="cta-phone"><span class="material-symbols-outlined" style="font-size:32px">call</span>643 542 157</a></div>
+    <div class="flex flex-col sm:flex-row justify-center gap-md items-center opacity-80">
+      <div class="flex items-center gap-sm"><span class="material-symbols-outlined" style="font-size:20px;color:#ffb4a9">location_on</span><span class="font-body-md text-body-md">C/ del San Juan, 4 · 30201 Cartagena, Murcia</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="w-full py-xl bg-surface-container-lowest border-t border-outline/20">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-xl text-center md:text-left">
+    <div>
+      <div class="flex items-center gap-sm justify-center md:justify-start mb-md">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21L12 3L21 21H3Z" stroke="#6b0d09" stroke-width="1.6" stroke-linejoin="round" fill="#ffe9c8"/><circle cx="9" cy="15" r="1.2" fill="#6b0d09"/><circle cx="14" cy="13" r="1" fill="#008C45"/><circle cx="12" cy="17" r="1" fill="#6b0d09"/></svg>
+        <h3 class="font-headline-md text-headline-md text-primary italic">Mamma Mia</h3>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface opacity-65">Pizzeria artesanal en Cartagena. Sabor italiano, hecho con amor.</p>
+      <div class="flex gap-sm justify-center md:justify-start mt-md"><span class="tricolor-dot"><span></span><span></span><span></span></span></div>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-md">Navegación</h4>
+      <div class="flex flex-col gap-sm">
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#carta">La Carta</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#favoritos">Favoritos</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#historia">Historia</a>
+        <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-md">Ubicación</h4>
+      <p class="font-body-md text-body-md text-on-surface-variant">C/ del San Juan, 4<br/>30201 Cartagena, Murcia</p>
+      <a href="tel:643542157" class="inline-flex items-center gap-xs mt-sm font-body-md text-body-md text-primary font-semibold hover:opacity-80 transition-opacity"><span class="material-symbols-outlined" style="font-size:16px">call</span>643 542 157</a>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-md opacity-50 text-sm">© 2025 Mamma Mia Pizzeria · Fatto a mano con amore</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (!target) return;
+      const navH = document.getElementById('main-nav').offsetHeight;
+      const subNavEl = document.getElementById('menu-subnav');
+      const subNavH = subNavEl ? subNavEl.offsetHeight : 0;
+      const inCarta = !!target.closest('#carta') || target.id === 'carta';
+      const extra = inCarta ? subNavH : 0;
+      const y = target.getBoundingClientRect().top + window.pageYOffset - navH - extra - 12;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    }
+  });
+});
+const heroImg = document.querySelector('.hero-img-3d');
+let scrollTransform = '';
+window.addEventListener('scroll', () => {
+  const scrollPos = window.pageYOffset;
+  const heroHeight = document.getElementById('hero').offsetHeight;
+  if (scrollPos <= heroHeight) {
+    const t = scrollPos / heroHeight;
+    scrollTransform = `rotateX(${t * 8}deg) scale(${1 + t * 0.15})`;
+    if (heroImg) heroImg.style.transform = scrollTransform;
+  }
+}, { passive: true });
+document.addEventListener('mousemove', e => {
+  if (window.pageYOffset > window.innerHeight * 0.4) return;
+  const x = (e.clientX / window.innerWidth - 0.5);
+  const y = (e.clientY / window.innerHeight - 0.5);
+  if (heroImg) heroImg.style.transform = `${scrollTransform} translateX(${x * 18}px) translateY(${y * 18}px)`;
+  const heroText = document.getElementById('hero-text');
+  if (heroText) heroText.style.transform = `translateX(${x * -10}px) translateY(${y * -10}px)`;
+}, { passive: true });
+gsap.to("#hero-text", { y: 80, opacity: 0, ease: "none", scrollTrigger: { trigger: "#hero", start: "top top", end: "50% top", scrub: true } });
+gsap.to(".parallax-wrap", { clipPath: "inset(0 0% 0 0%)", ease: "none", scrollTrigger: { trigger: ".parallax-section", start: "top bottom", end: "bottom top", scrub: true } });
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) scale(1.02)`;
+    const shine = card.querySelector('.tilt-shine');
+    if (shine) shine.style.background = `radial-gradient(circle at ${50 + x * 35}% ${50 + y * 35}%, rgba(255,255,255,.14), transparent 60%)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = 'perspective(900px) rotateY(0) rotateX(0) scale(1)'; });
+});
+document.querySelectorAll('.cat-header').forEach(el => {
+  gsap.from(el, { rotateX: -20, y: 24, opacity: 0, duration: 1, ease: "power3.out", transformOrigin: "50% 100%", scrollTrigger: { trigger: el, start: "top 85%" } });
+});
+gsap.from("#historia-text", { y: 40, opacity: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: "#historia", start: "top 75%" } });
+document.querySelectorAll('#carta > div').forEach(section => {
+  const items = section.querySelectorAll('.menu-item');
+  if (items.length) { gsap.from(items, { y: 22, opacity: 0, stagger: 0.04, duration: 0.7, ease: "power2.out", scrollTrigger: { trigger: section, start: "top 75%" } }); }
+});
+gsap.from(".bento-cell", { y: 60, opacity: 0, stagger: 0.08, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: ".bento-grid", start: "top 75%" } });
+gsap.from(".testimonial-card", { y: 40, opacity: 0, stagger: 0.15, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: ".testimonial-card", start: "top 80%" } });
+gsap.from(".cta-phone", { scale: 0.92, opacity: 0, duration: 0.9, ease: "back.out(1.5)", scrollTrigger: { trigger: "#contacto", start: "top 80%" } });
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(target * eased) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); counterObs.unobserve(entry.target); } });
+}, { threshold: 0.4 });
+document.querySelectorAll('.stat-number').forEach(el => counterObs.observe(el));
+const sections = ['pizzas','tacos','panozzo','hamburguesas','empanadas','postres'];
+const subLinks = document.querySelectorAll('.subnav-link');
+function updateSubNav() {
+  const navH = (document.getElementById('main-nav')?.offsetHeight || 64) + (document.getElementById('menu-subnav')?.offsetHeight || 50) + 20;
+  let current = sections[0];
+  sections.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= navH) current = id; });
+  subLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', updateSubNav, { passive: true });
+updateSubNav();
+(function () {
+  const now = new Date();
+  const day = now.getDay();
+  const minutes = now.getHours() * 60 + now.getMinutes();
+  document.querySelectorAll('.hours-row').forEach(row => { if (parseInt(row.dataset.day) === day) row.classList.add('today'); });
+  let open = false;
+  if (day >= 1 && day <= 4) open = (minutes >= 780 && minutes <= 960) || (minutes >= 1140 && minutes <= 1410);
+  else if (day === 5 || day === 6) open = (minutes >= 780 && minutes <= 960) || (minutes >= 1140);
+  else if (day === 0) open = (minutes >= 1140 && minutes <= 1410);
+  const pill = document.getElementById('open-status');
+  const label = document.getElementById('open-label');
+  if (!open && pill && label) {
+    pill.style.background = 'rgba(205,33,42,.10)';
+    pill.style.borderColor = 'rgba(205,33,42,.3)';
+    pill.style.color = '#CD212A';
+    pill.querySelector('.pulse-dot').style.background = '#CD212A';
+    label.textContent = 'Cerrado ahora';
+  }
+})();
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  if (nav) nav.classList.toggle('shadow-md', window.pageYOffset > 10);
+}, { passive: true });
+</script>
+</body></html>
