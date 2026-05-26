@@ -63,7 +63,14 @@ body{background-color:#fcf9f0;color:#1c1c17;overflow-x:hidden;-webkit-font-smoot
 .tilt-card:hover .tilt-shine{opacity:1}
 
 .hero-image-container{perspective:1500px}
-.hero-img-3d{transition:transform .12s ease-out;will-change:transform}
+.hero-img-3d{transition:transform .12s ease-out;will-change:transform;animation:hero-float 18s ease-in-out infinite}
+@keyframes hero-float{
+  0%{transform:scale(1.12) translateY(0px)}
+  25%{transform:scale(1.16) translateY(-8px) rotateX(1deg)}
+  50%{transform:scale(1.14) translateY(-14px) rotateY(1.5deg)}
+  75%{transform:scale(1.16) translateY(-6px) rotateX(-1deg)}
+  100%{transform:scale(1.12) translateY(0px)}
+}
 .hero-pizza-svg{position:absolute;opacity:.06;pointer-events:none}
 
 .parallax-wrap{clip-path:inset(0 15% 0 15%)}
@@ -211,7 +218,7 @@ body{background-color:#fcf9f0;color:#1c1c17;overflow-x:hidden;-webkit-font-smoot
 
 <section class="relative h-screen w-full overflow-hidden flex items-center justify-center" id="hero">
   <div class="absolute inset-0 z-0 hero-image-container">
-    <img alt="Mamma Mia Pizzeria Cartagena" class="hero-img-3d w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiScluvMHTE-hR_X9UxJO-pzuT6QTvdXIVvbumPiLAVdjUNXAwMQjTK49Pu7rbgsecFkRykF6l5zJVsA1rUMGCZuRVGDEl42O48dTxyhE2qjLpKcNNz7jCKUpcXuLHRdS3Xgs2PNPq4NfccEwVjcKXDq_753Jw9FygHpumnz6OKUpXJXmvkT6WR9X-Et5UGr_Vdk3Nq90ZJBGQJQi9y_YJ99iDGQtxmRHoH0DGfmqiE0wprvEHilt1UYLE"/>
+    <img alt="Mamma Mia Pizzeria Cartagena" class="hero-img-3d w-full h-full object-cover" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=3840&q=95&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1920&q=90&auto=format&fit=crop 1920w, https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=3840&q=95&auto=format&fit=crop 3840w" sizes="100vw"/>
     <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70"></div>
   </div>
   <svg class="hero-pizza-svg" style="top:8%;left:5%;width:140px;height:140px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -620,23 +627,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 const heroImg = document.querySelector('.hero-img-3d');
-let scrollTransform = '';
-window.addEventListener('scroll', () => {
-  const scrollPos = window.pageYOffset;
-  const heroHeight = document.getElementById('hero').offsetHeight;
-  if (scrollPos <= heroHeight) {
-    const t = scrollPos / heroHeight;
-    scrollTransform = `rotateX(${t * 8}deg) scale(${1 + t * 0.15})`;
-    if (heroImg) heroImg.style.transform = scrollTransform;
-  }
-}, { passive: true });
+let mouseX = 0, mouseY = 0, scrollExtra = '';
 document.addEventListener('mousemove', e => {
   if (window.pageYOffset > window.innerHeight * 0.4) return;
-  const x = (e.clientX / window.innerWidth - 0.5);
-  const y = (e.clientY / window.innerHeight - 0.5);
-  if (heroImg) heroImg.style.transform = `${scrollTransform} translateX(${x * 18}px) translateY(${y * 18}px)`;
+  mouseX = (e.clientX / window.innerWidth - 0.5);
+  mouseY = (e.clientY / window.innerHeight - 0.5);
+  if (heroImg) heroImg.style.transform = `scale(1.13) translateX(${mouseX * 22}px) translateY(${mouseY * 22}px) rotateY(${mouseX * 4}deg) rotateX(${-mouseY * 4}deg)`;
   const heroText = document.getElementById('hero-text');
-  if (heroText) heroText.style.transform = `translateX(${x * -10}px) translateY(${y * -10}px)`;
+  if (heroText) heroText.style.transform = `translateX(${mouseX * -12}px) translateY(${mouseY * -12}px)`;
 }, { passive: true });
 gsap.to("#hero-text", { y: 80, opacity: 0, ease: "none", scrollTrigger: { trigger: "#hero", start: "top top", end: "50% top", scrub: true } });
 gsap.to(".parallax-wrap", { clipPath: "inset(0 0% 0 0%)", ease: "none", scrollTrigger: { trigger: ".parallax-section", start: "top bottom", end: "bottom top", scrub: true } });
